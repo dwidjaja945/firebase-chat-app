@@ -22,7 +22,6 @@ class Chat extends Component {
             )
         });
 
-        console.log( 'Chat Log : ' , this.props.chatLog);
         return(
             <div>
                 <h1 className="center">Chat Room</h1>
