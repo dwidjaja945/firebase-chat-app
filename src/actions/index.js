@@ -1,4 +1,6 @@
 import types from './types';
+import db from '../firebase';
+
 
 export function updateChat( log ){
     return {
@@ -6,3 +8,24 @@ export function updateChat( log ){
         payload: log
     };
 }
+
+export function updateInput( name, value ) {
+    return {
+        type: types.UPDATE_INPUT,
+        payload: {
+            name,
+            value
+        }
+    }
+}
+
+export function sendMessageToDatabase(message) {
+    db.ref('/chat-log').push({
+        name: 'Stu',
+        message: message
+    });
+
+    return{
+        type: types.SEND_MESSAGE
+    }
+};
