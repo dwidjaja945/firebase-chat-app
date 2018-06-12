@@ -4,10 +4,12 @@ import { updateInput , sendMessageToDatabase , clearInput } from '../actions';
 
 class MessageInput extends Component {
 	sendMessage(e) {
-		e.preventDefault();
+        e.preventDefault();
+        
+        const { message , roomId , clearInput } = this.props
 
-        sendMessageToDatabase(this.props.message);
-        this.props.clearInput( 'message' );
+        sendMessageToDatabase(roomId , message);
+        clearInput( 'message' );
 	};
 
 	updateMessage(e) {
