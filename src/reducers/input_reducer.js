@@ -1,7 +1,8 @@
 import types from '../actions/types';
 
 const DEFAULT_STATE = {
-    message: ''
+    message: '',
+    roomName: ''
 };
 
 export default ( state=DEFAULT_STATE , action ) => {
